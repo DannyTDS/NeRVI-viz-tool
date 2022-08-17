@@ -1,0 +1,103 @@
+.filter-container {
+    margin: 20px 0 50px 0;
+}
+
+.slider-title {
+    font-size: 20px;
+}
+
+.slider-wrapper {
+    display: grid;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    place-items: center;
+    margin-top: 10px;
+}
+
+.slider-wrapper .range-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.left-value {
+    position: absolute;
+    width: 50px;
+    margin-right: 200px;
+    text-align: right;
+}
+
+.right-value {
+    position: absolute;
+    width: 50px;
+    margin-left: 200px;
+    text-align: left;
+}
+
+.slider-wrapper .range-container input {
+    -webkit-appearance: none;
+    height: 3px;
+    width: 100%;
+    background: #ddd;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+}
+
+.slider-tooltip {
+    position: relative;
+    text-align: center;
+    place-items: center;
+}
+
+.slider-tooltip span {
+    position: absolute;
+    height: 45px;
+    width: 45px;
+    color: #000;
+    top: -65px;
+    transform: translateX(-50%) scale(0);
+    transform-origin: bottom;
+    transition: transform 0.2s ease-in-out;
+    line-height: 55px;
+    z-index: 2;
+}
+
+.slider-tooltip span.show {
+    transform: translateX(-50%) scale(1);
+}
+
+.slider-tooltip span:after {
+    position: absolute;
+    content: "";
+    height: 45px;
+    width: 45px;
+    left: 50%;
+    background: #FFF;
+    transform: translateX(-50%) rotate(45deg);
+    z-index: -1;
+    border: 2px solid #DDD;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+}
+
+.slider-wrapper .range-container input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 15px;
+    width: 15px;
+    background-color: #0066CC;
+    border-radius: 50%;
+    border: 1px solid #0066CC;
+    cursor: pointer;
+    box-shadow: none;
+    transition: all 0.3s;
+}
+
+.slider-wrapper .range-container input::-webkit-slider-thumb:hover {
+    box-shadow: 0 0 10px 3px rgba(0,0,0,0.3);
+    transition: all 0.3s;
+}

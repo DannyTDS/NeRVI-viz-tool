@@ -1,0 +1,22 @@
+.app-body-container {
+    display: flex;
+    height: 750px;
+    border-top: 2px solid #bebebe;
+    border-bottom: 2px solid #bebebe;
+}
+
+.image-div {
+    flex: 6;
+}
+
+.sidebar-div {
+    flex: 1;
+    border-left: 2px solid #bebebe;
+}
+
+@media screen and (max-width: 1000px) {
+
+    .app-body-container {
+        height: 1300px;
+    }
+}

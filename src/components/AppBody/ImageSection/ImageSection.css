@@ -1,0 +1,22 @@
+.windows-wrapper {
+    /* vertical-align: center;
+    align-items: center; */
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/* .ratio-wrapper {
+    position: relative;
+    width: 40%;
+	height: 0;
+} */
+
+
+@media screen and (max-width: 1000px) {
+    .windows-wrapper {
+        display: block;
+        min-width: 500px;
+    }    
+}
