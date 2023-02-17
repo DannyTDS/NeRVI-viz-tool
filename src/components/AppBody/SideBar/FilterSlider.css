@@ -91,7 +91,6 @@
     width: 15px;
     background-color: #0066CC;
     border-radius: 50%;
-    border: 1px solid #0066CC;
     cursor: pointer;
     box-shadow: none;
     transition: all 0.3s;
@@ -99,5 +98,13 @@
 
 .slider-wrapper .range-container input::-webkit-slider-thumb:hover {
     box-shadow: 0 0 10px 3px rgba(0,0,0,0.3);
+    background-color: #0066CC;
+    transition: all 0.3s;
+}
+
+
+.slider-wrapper .range-container input::-webkit-slider-thumb:active {
+    box-shadow: 0 0 10px 3px rgba(0,0,0,0.3);
+    background-color: #000044;
     transition: all 0.3s;
 }

@@ -49,12 +49,12 @@ const SideBar = (props) => {
     const [selectedDataset, setSelectedDataset] = useState("Vortex");
 
     const resetHandler = () => {
-      setSelectedTimeStep(props.initialValues.time_step);
-      setSelectedIsoValue(props.initialValues.iso_value);
-      setSelectedTheta(props.initialValues.theta);
-      setSelectedPhi(props.initialValues.phi);
-      setSelectedDataset("Vortex");
-      props.onParamsChange(props.initialValues);
+        setSelectedTimeStep(props.initialValues.time_step);
+        setSelectedIsoValue(props.initialValues.iso_value);
+        setSelectedTheta(props.initialValues.theta);
+        setSelectedPhi(props.initialValues.phi);
+        setSelectedDataset("Vortex");
+        props.onParamsChange(props.initialValues);
     };
 
     return (
@@ -66,6 +66,9 @@ const SideBar = (props) => {
                     selectedDataset={selectedDataset}
                     setSelectedDataset={setSelectedDataset}
                 />
+                <button className="reset-button" onClick={resetHandler}>
+                    Reset to default
+                </button>
             </div>
             <div className="divider">
                 <form>
@@ -103,9 +106,6 @@ const SideBar = (props) => {
                     />
                 </form>
             </div>
-            <button className="reset-button" onClick={resetHandler}>
-                Reset to default
-            </button>
         </div>
     );
 };

@@ -20,15 +20,28 @@ body{
 }
 
 .dropdown .dropdown-btn {
-    padding: 15px 20px;
+    height: 50px;
+    padding: 0 15px;
     background: #fff;
     box-shadow: 0 0 10px 6px rgba(0,0,0,0.3);
-    font-weight: bold;
-    color: #333;
+    font-size: 1.2em;
+    color: #000;
     display: flex;
     align-items: center;
     cursor: pointer;
     justify-content: space-between;
+    transition: all 0.3s;
+}
+
+.dropdown .dropdown-btn:hover {
+    background-color: #0066CC;
+    color: #FFF;
+    transition: all 0.3s;
+}
+
+.dropdown .dropdown-btn:active {
+    background-color: #000044;
+    color: #FFF;
 }
 
 .dropdown .dropdown-content {
@@ -58,5 +71,12 @@ body{
 }
 
 .dropdown .dropdown-content .dropdown-item:hover {
-    background: #ddd;
+    background-color: #0066CC;
+    color: #FFF;
+    transition: all 0.3s;
+}
+
+.dropdown .dropdown-content .dropdown-item:active {
+    background-color: #000044;
+    color: #FFF;
 }
