@@ -66,45 +66,61 @@ const SideBar = (props) => {
                     selectedDataset={selectedDataset}
                     setSelectedDataset={setSelectedDataset}
                 />
+                <div className="btn-group">
+                    <input
+                        className="radio-input"
+                        type="radio"
+                        name="render-opn-group"
+                        id="ir"
+                        value="ir"
+                    />
+                    <label className="radio-label" for="ir">IR</label>
+                    <input
+                        className="radio-input"
+                        type="radio"
+                        name="render-opn-group"
+                        id="dvr"
+                        value="dvr"
+                    />
+                    <label className="radio-label" for="dvr">DVR</label>
+                </div>
                 <button className="reset-button" onClick={resetHandler}>
                     Reset to default
                 </button>
             </div>
             <div className="divider">
-                <form>
-                    <FilterSlider
-                        title="Time Step"
-                        min="3"
-                        max="90"
-                        step="3"
-                        value={selectedTimeStep}
-                        onChangeHandler={timeStepChangeHandler}
-                    />
-                    <FilterSlider
-                        title="Iso Value"
-                        min="-0.4"
-                        max="0.4"
-                        step="0.1"
-                        value={selectedIsoValue}
-                        onChangeHandler={isoValueChangeHandler}
-                    />
-                    <FilterSlider
-                        title="Theta"
-                        min="45"
-                        max="120"
-                        step="15"
-                        value={selectedTheta}
-                        onChangeHandler={thetaChangeHandler}
-                    />
-                    <FilterSlider
-                        title="Phi"
-                        min="90"
-                        max="225"
-                        step="15"
-                        value={selectedPhi}
-                        onChangeHandler={phiChangeHandler}
-                    />
-                </form>
+                <FilterSlider
+                    title="Time Step"
+                    min="3"
+                    max="90"
+                    step="3"
+                    value={selectedTimeStep}
+                    onChangeHandler={timeStepChangeHandler}
+                />
+                <FilterSlider
+                    title="Iso Value"
+                    min="-0.4"
+                    max="0.4"
+                    step="0.1"
+                    value={selectedIsoValue}
+                    onChangeHandler={isoValueChangeHandler}
+                />
+                <FilterSlider
+                    title="Theta"
+                    min="45"
+                    max="120"
+                    step="15"
+                    value={selectedTheta}
+                    onChangeHandler={thetaChangeHandler}
+                />
+                <FilterSlider
+                    title="Phi"
+                    min="90"
+                    max="225"
+                    step="15"
+                    value={selectedPhi}
+                    onChangeHandler={phiChangeHandler}
+                />
             </div>
         </div>
     );
