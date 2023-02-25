@@ -15,7 +15,7 @@ const Header = () => {
 
     return (
         <div className="header-frame">
-            <h1>Visualization Tool</h1>
+            <h1>NeRVI: Compressive Neural Representation of Visualization Images</h1>
             <i
                 className="fa fa-info-circle fa-2x"
                 id="info-icon"

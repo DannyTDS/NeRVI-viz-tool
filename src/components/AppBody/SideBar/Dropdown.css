@@ -23,7 +23,8 @@ body{
     height: 50px;
     padding: 0 15px;
     background: #fff;
-    box-shadow: 0 0 10px 6px rgba(0,0,0,0.3);
+    /* box-shadow: 0 0 10px 6px rgba(0,0,0,0.3); */
+    border: 2px solid #949494;
     font-size: 1.2em;
     color: #000;
     display: flex;
@@ -53,7 +54,7 @@ body{
     box-shadow: 0 0 10px 6px rgba(0,0,0,0.5);
     font-weight: 500;
     color: #333;
-    width: 92%;
+    width: 96%;
     z-index: 3;
     transform: scale(1);
     transform-origin: top;
