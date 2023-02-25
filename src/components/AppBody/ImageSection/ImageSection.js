@@ -48,7 +48,7 @@ const ImageSection = (props) => {
       <div className="ratio-wrapper">
         <Window className="image-window" />
       </div> */}
-            <Window type="EXP" imagePath={exp_dir} />
+            {/* <Window type="EXP" imagePath={exp_dir} /> */}
             <Window type="GT" imagePath={gt_dir} />
         </div>
     );

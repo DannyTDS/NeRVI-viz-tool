@@ -2,15 +2,18 @@
     height: 80px;
     padding: 5px 20px 5px 20px;
     vertical-align: center;
+    display: flex;
+    justify-content: space-between;
 }
 
-.header-frame h1 {
-    margin-top: 20px;
-    float: left;
+.flex-wrapper{
+    display: flex;
 }
 
 h1 {
+    margin: 20px 0;
     font-weight: bolder;
+    overflow: hidden;
 }
 
 #info-icon {

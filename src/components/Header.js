@@ -15,20 +15,24 @@ const Header = () => {
 
     return (
         <div className="header-frame">
-            <h1>NeRVI: Compressive Neural Representation of Visualization Images</h1>
-            <i
-                className="fa fa-info-circle fa-2x"
-                id="info-icon"
-                onClick={onClickHandler}
-                onBlur={onBlurHandler}
-            ></i>
-            <span className={isOpen ? "show" : ""}>
-                Supervised by Professor Chaoli Wang
-                <br />
-                Project Led by Pengfei Gu
-                <br />
-                App Built by Ziang Tong
-            </span>
+            <div className="flex-wrapper">
+                <h1>NeRVI: Compressive Neural Representation of Visualization Images</h1>
+            </div>
+            <div className="flex-wrapper">
+                <span className={isOpen ? "show" : ""}>
+                    Supervised by Professor Chaoli Wang
+                    <br />
+                    Project Led by Pengfei Gu
+                    <br />
+                    App Built by Ziang Tong
+                </span>
+                <i
+                    className="fa fa-info-circle fa-2x"
+                    id="info-icon"
+                    onClick={onClickHandler}
+                    onBlur={onBlurHandler}
+                ></i>
+            </div>
         </div>
     );
 };

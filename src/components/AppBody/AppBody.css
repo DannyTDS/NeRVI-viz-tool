@@ -1,22 +1,34 @@
 .app-body-container {
     display: flex;
     height: 750px;
-    border-top: 2px solid #bebebe;
-    border-bottom: 2px solid #bebebe;
+    /* border-top: 2px solid #bebebe;
+    border-bottom: 2px solid #bebebe; */
 }
 
-.image-div {
+/* .image-div {
     flex: 6;
+} */
+
+.app-body-container > div{
+    /* flex: 1; */
+    margin: 5px 10px;
+    border: 2px solid #bebebe;
+    border-radius: 5px;
 }
 
-.sidebar-div {
-    flex: 1;
-    border-left: 2px solid #bebebe;
+#image-sec-div{
+    width: 100%;
+    min-width: 800px;
 }
 
-@media screen and (max-width: 1000px) {
+#sidebar-div{
+    width: 500px;
+    min-width: 500px;
+}
+
+/* @media screen and (max-width: 1000px) {
 
     .app-body-container {
         height: 1300px;
     }
-}
+} */

@@ -20,10 +20,10 @@ const AppBody = () => {
 
     return (
         <div className="app-body-container">
-            <div className="image-div">
+            <div id="image-sec-div">
                 <ImageSection imageParams={params} />
             </div>
-            <div className="sidebar-div">
+            <div id="sidebar-div">
                 <SideBar
                     initialValues={INIT_PARAMS}
                     onParamsChange={paramsChangeHandler}
