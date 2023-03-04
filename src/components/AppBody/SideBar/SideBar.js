@@ -23,10 +23,7 @@ const SideBar = (props) => {
     };
 
     useEffect(() => {
-        console.log(timeStepLimits);
-    }, [timeStepLimits])
-
-    useEffect(() => {
+        // console.log(selectedParams)
         // Pass selected params upwards
         props.onParamsChange(selectedParams);
 
@@ -36,9 +33,6 @@ const SideBar = (props) => {
         } else {
             document.getElementById("dvr").checked=true;
         }
-
-        // Update slider limits on dataset change
-
     }, [selectedParams]);
 
     const resetViewing = () => {
