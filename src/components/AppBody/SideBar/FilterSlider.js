@@ -7,11 +7,12 @@ const FilterSlider = (props) => {
     const [isMoving, setIsMoving] = useState(false);
     // const [toolTipOffset, setTooltipOffset] = useState("0%");
     const onChangeHandler = (e) => {
-        let value = e.target.value;
+        const name = (props.title === "Time Step") ? "time_step" : (props.title === "Theta") ? "theta" : "phi"
+        const value = e.target.value;
         setTooltipValue(value);
         setIsMoving(true);
         // setTooltipOffset((toolTipValue - props.min)/(props.max - props.min)*100 + "%");
-        props.onChangeHandler(e);
+        props.onChangeHandler({name:name, value:value});
     };
 
     const onBlurHandler = () => {
