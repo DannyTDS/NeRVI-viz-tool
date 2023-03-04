@@ -4,17 +4,16 @@ import Window from "./Window";
 import "./ImageSection.css";
 
 const ImageSection = (props) => {
-    const IMAGES_DIR = "/data/vortex";
+    const ROOT = "/data";
 
     const img_dir =
-        IMAGES_DIR +
-        "/ground-truth/save-timestep-" +
-        props.imageParams.time_step +
-        "-theta-" +
-        props.imageParams.theta +
-        ".000000-phi-" +
-        props.imageParams.phi +
-        ".000000.png";
+        ROOT +
+        "/" + props.params.dset +
+        "/" + props.params.render +
+        "/" + props.params.time_step +
+        "-" + props.params.theta +
+        "-" + props.params.phi +
+        ".png";
 
     return (
         <div className="windows-wrapper">
