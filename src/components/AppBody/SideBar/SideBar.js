@@ -7,27 +7,48 @@ import "./SideBar.css";
 const SideBar = (props) => {
 
     const [selectedParams, setParams] = useState(props.initialValues)
+    const [timeStepLimits, setTimeStepLimits] = useState(props.limits.time_step[props.initialValues.dset])
 
     const formChangeHandler = (args) => {
         const {name, value} = args;
+        // If switch to another dataset, need to reset the viewing parameters
         setParams(prevParams => ({
-        ...prevParams,
-        [name]: value
+            ...prevParams,
+            [name]: value
         }))
+        if (name==="dset") {
+            setTimeStepLimits(props.limits.time_step[value]);
+            resetViewing();
+        }
     };
 
     useEffect(() => {
-        console.log(selectedParams.render === "IR")
+        console.log(timeStepLimits);
+    }, [timeStepLimits])
+
+    useEffect(() => {
+        // Pass selected params upwards
+        props.onParamsChange(selectedParams);
+
+        // Update radio buttons
         if (selectedParams.render === "IR") {
             document.getElementById("ir").checked=true;
         } else {
             document.getElementById("dvr").checked=true;
         }
-        props.onParamsChange(selectedParams);
+
+        // Update slider limits on dataset change
+
     }, [selectedParams]);
 
-    const resetHandler = () => {
-        setParams(props.initialValues);
+    const resetViewing = () => {
+        // Reset the viewing parameters
+        setParams(prevParams => ({
+            ...prevParams,
+            time_step: props.limits.time_step[prevParams.dset][0],
+            theta: props.limits.theta[0],
+            phi: props.limits.phi[0]
+        }))
     };
 
     return (
@@ -48,7 +69,7 @@ const SideBar = (props) => {
                         value="ir"
                         onClick={() => {formChangeHandler({name:"render", value:"IR"})}}
                     />
-                    <label className="radio-label" for="ir">IR</label>
+                    <label className="radio-label" htmlFor="ir">IR</label>
                     <input
                         className="radio-input"
                         type="radio"
@@ -57,34 +78,34 @@ const SideBar = (props) => {
                         value="dvr"
                         onClick={() => {formChangeHandler({name:"render", value:"DVR"})}}
                     />
-                    <label className="radio-label" for="dvr">DVR</label>
+                    <label className="radio-label" htmlFor="dvr">DVR</label>
                 </div>
-                <button className="reset-button" onClick={resetHandler}>
-                    Reset to default
+                <button className="reset-button" onClick={resetViewing}>
+                    Reset
                 </button>
             </div>
             <div className="divider">
                 <FilterSlider
                     title="Time Step"
-                    min="3"
-                    max="90"
-                    step="3"
+                    min={timeStepLimits[0]}
+                    max={timeStepLimits[1]}
+                    step={timeStepLimits[2]}
                     value={selectedParams.time_step}
                     onChangeHandler={(e) => {formChangeHandler(e)}}
                 />
                 <FilterSlider
                     title="Theta"
-                    min="45"
-                    max="120"
-                    step="15"
+                    min={props.limits.theta[0]}
+                    max={props.limits.theta[1]}
+                    step={props.limits.theta[2]}
                     value={selectedParams.theta}
                     onChangeHandler={(e) => {formChangeHandler(e)}}
                 />
                 <FilterSlider
                     title="Phi"
-                    min="90"
-                    max="225"
-                    step="15"
+                    min={props.limits.phi[0]}
+                    max={props.limits.phi[1]}
+                    step={props.limits.phi[2]}
                     value={selectedParams.phi}
                     onChangeHandler={(e) => {formChangeHandler(e)}}
                 />

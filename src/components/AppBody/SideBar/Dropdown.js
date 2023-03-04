@@ -4,7 +4,7 @@ import "./Dropdown.css";
 const Dropdown = (props) => {
     const [isActive, setIsActive] = useState(false);
 
-    const options = ["Vortex", "Five Jets", "Ionization", "Tornado", "Tangaroa"];
+    const options = ["Vortex", "Ionization", "Tornado", "Five Jets", "Tangaroa"];
 
     const onBtnClickHandler = () => {
         setIsActive(!isActive);

@@ -45,6 +45,7 @@ const FilterSlider = (props) => {
                         // onChange={props.onChangeHandler}
                         onInput={onChangeHandler}
                         onBlur={onBlurHandler}
+                        disabled={props.min===props.max}
                     />
                     <div className="right-value">{props.max}</div>
                 </div>
