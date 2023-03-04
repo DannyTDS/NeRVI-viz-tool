@@ -6,31 +6,10 @@ import "./ImageSection.css";
 const ImageSection = (props) => {
     const IMAGES_DIR = "/data/vortex";
 
-    let parsedIsoValue = props.imageParams.iso_value;
-
-    if (props.imageParams.iso_value === "0") {
-        parsedIsoValue = "0.000000";
-    } else {
-        parsedIsoValue += "00000";
-    }
-
-    const gt_dir =
+    const img_dir =
         IMAGES_DIR +
         "/ground-truth/save-timestep-" +
         props.imageParams.time_step +
-        "-iso-" +
-        parsedIsoValue +
-        "-theta-" +
-        props.imageParams.theta +
-        ".000000-phi-" +
-        props.imageParams.phi +
-        ".000000.png";
-    const exp_dir =
-        IMAGES_DIR +
-        "/exp-results/save-timestep-" +
-        props.imageParams.time_step +
-        "-iso-" +
-        parsedIsoValue +
         "-theta-" +
         props.imageParams.theta +
         ".000000-phi-" +
@@ -49,7 +28,7 @@ const ImageSection = (props) => {
         <Window className="image-window" />
       </div> */}
             {/* <Window type="EXP" imagePath={exp_dir} /> */}
-            <Window type="GT" imagePath={gt_dir} />
+            <Window imagePath={img_dir} />
         </div>
     );
 };

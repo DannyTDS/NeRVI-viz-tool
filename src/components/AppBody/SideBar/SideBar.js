@@ -5,24 +5,30 @@ import Dropdown from "./Dropdown";
 import "./SideBar.css";
 
 const SideBar = (props) => {
+    const [selectedDataset, setSelectedDataset] = useState(props.initialValues.dset);
+
+    const [selectedRender, setSelectedRender] = useState(props.initialValues.render);
+
     const [selectedTimeStep, setSelectedTimeStep] = useState(
         props.initialValues.time_step
-    );
-    const [selectedIsoValue, setSelectedIsoValue] = useState(
-        props.initialValues.iso_value
     );
     const [selectedTheta, setSelectedTheta] = useState(
         props.initialValues.theta
     );
     const [selectedPhi, setSelectedPhi] = useState(props.initialValues.phi);
 
+    const dsetChangeHandler = (e) => {
+        setSelectedDataset(e.target.textContent);
+        formChangeHandler();
+    }
+
+    const renderChangeHandler = (mode) => {
+        setSelectedRender(mode);
+        formChangeHandler();
+    }
+
     const timeStepChangeHandler = (e) => {
         setSelectedTimeStep(e.target.value);
-        formChangeHandler();
-    };
-
-    const isoValueChangeHandler = (e) => {
-        setSelectedIsoValue(e.target.value);
         formChangeHandler();
     };
 
@@ -37,23 +43,25 @@ const SideBar = (props) => {
     };
 
     const formChangeHandler = () => {
+        // FIXME not updating immeidately
         const selectedParams = {
+            dset: selectedDataset,
+            render: selectedRender,
             time_step: selectedTimeStep,
-            iso_value: selectedIsoValue,
             theta: selectedTheta,
             phi: selectedPhi,
         };
+        // console.log(selectedParams);
         props.onParamsChange(selectedParams);
     };
 
-    const [selectedDataset, setSelectedDataset] = useState("Vortex");
-
     const resetHandler = () => {
+        // FIXME reset logic
+        setSelectedDataset("Vortex");
+        setSelectedRender("IR")
         setSelectedTimeStep(props.initialValues.time_step);
-        setSelectedIsoValue(props.initialValues.iso_value);
         setSelectedTheta(props.initialValues.theta);
         setSelectedPhi(props.initialValues.phi);
-        setSelectedDataset("Vortex");
         props.onParamsChange(props.initialValues);
     };
 
@@ -64,7 +72,7 @@ const SideBar = (props) => {
                 {/* <label id="dataset-label">Dataset</label> */}
                 <Dropdown
                     selectedDataset={selectedDataset}
-                    setSelectedDataset={setSelectedDataset}
+                    onChangeHandler={dsetChangeHandler}
                 />
                 <div className="btn-group">
                     <input
@@ -73,6 +81,8 @@ const SideBar = (props) => {
                         name="render-opn-group"
                         id="ir"
                         value="ir"
+                        checked
+                        onChange={(e) => {renderChangeHandler("IR")}}
                     />
                     <label className="radio-label" for="ir">IR</label>
                     <input
@@ -81,6 +91,7 @@ const SideBar = (props) => {
                         name="render-opn-group"
                         id="dvr"
                         value="dvr"
+                        onChange={(e) => {renderChangeHandler("DVR")}}
                     />
                     <label className="radio-label" for="dvr">DVR</label>
                 </div>
@@ -96,14 +107,6 @@ const SideBar = (props) => {
                     step="3"
                     value={selectedTimeStep}
                     onChangeHandler={timeStepChangeHandler}
-                />
-                <FilterSlider
-                    title="Iso Value"
-                    min="-0.4"
-                    max="0.4"
-                    step="0.1"
-                    value={selectedIsoValue}
-                    onChangeHandler={isoValueChangeHandler}
                 />
                 <FilterSlider
                     title="Theta"

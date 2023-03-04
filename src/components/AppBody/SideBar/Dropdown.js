@@ -11,7 +11,7 @@ const Dropdown = (props) => {
     };
 
     const onItemClickHandler = (e) => {
-        props.setSelectedDataset(e.target.textContent);
+        props.onChangeHandler(e);
         setIsActive(!isActive);
     };
 

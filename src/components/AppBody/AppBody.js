@@ -6,8 +6,9 @@ import "./AppBody.css";
 
 const AppBody = () => {
     const INIT_PARAMS = {
+        dset: "Vortex",
+        render: "IR",
         time_step: "3",
-        iso_value: "0",
         theta: "45",
         phi: "90",
     };
