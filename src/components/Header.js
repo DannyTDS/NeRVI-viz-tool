@@ -16,7 +16,7 @@ const Header = () => {
     return (
         <div className="header-frame">
             <div className="flex-wrapper">
-                <h1>NeRVI: Compressive Neural Representation of Visualization Images</h1>
+                <p>NeRVI: Compressive Neural Representation of Visualization Images</p>
             </div>
             <div className="flex-wrapper">
                 <span className={isOpen ? "show" : ""}>

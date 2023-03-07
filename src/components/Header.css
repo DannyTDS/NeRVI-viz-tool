@@ -10,9 +10,9 @@
     display: flex;
 }
 
-h1 {
+p {
     margin: 20px 0;
-    font-weight: bolder;
+    font-size: 2em;
     overflow: hidden;
     resize: none;
 }

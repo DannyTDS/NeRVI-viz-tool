@@ -6,8 +6,8 @@ import "./AppBody.css";
 
 const AppBody = () => {
     const DSET_LIMITS = {
-        theta: [0, 180, 9],
-        phi: [0, 360, 9],
+        theta: [0, 171, 9],
+        phi: [0, 351, 9],
         time_step: {
             Vortex: [3, 90, 3],
             Ionization: [2, 100, 2],

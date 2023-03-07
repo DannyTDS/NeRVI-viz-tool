@@ -10,7 +10,7 @@ function App() {
         <div id="app">
             <Header />
             <AppBody />
-            <footer> &copy; 2023 Pengfei Gu, Ziang Tong. Made with React.js 18.1.0.</footer>
+            <footer> &copy; 2023. Made with React.js 18.1.0.</footer>
         </div>
     );
 }
