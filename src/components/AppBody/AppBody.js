@@ -42,6 +42,7 @@ const AppBody = () => {
             <div id="image-sec-div">
                 <ImageSection params={params} />
             </div>
+            <div className="vl"/>
             <div id="sidebar-div">
                 <SideBar
                     limits={DSET_LIMITS}

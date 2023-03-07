@@ -1,10 +1,29 @@
-.windows-wrapper {
+.wrapper {
     /* vertical-align: center;
     align-items: center; */
     height: 100%;
-    display: flex;
     /* align-items: center; */
-    justify-content: space-around;
+}
+
+.window-wrapper {
+    float: left;
+    height:0;
+    width: 45%;
+    margin: 20px;
+    padding-bottom:45%;
+}
+
+.window {
+    /* position: relative; */
+    /* float: left; */
+    aspect-ratio: 1/1;
+    /* place-items: center center; */
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+    outline: 1px solid #e7e7e7;
 }
 
 /* .ratio-wrapper {
@@ -20,3 +39,12 @@
         min-width: 500px;
     }    
 } */
+
+@media screen and (max-width: 1400px) {
+    .window-wrapper{
+        float: none;
+        width: 90%;
+        margin: 20px;
+        padding-bottom: 90%;
+    }
+}

@@ -11,19 +11,30 @@
 
 .app-body-container > div{
     /* flex: 1; */
-    margin: 5px 10px;
-    border: 2px solid #bebebe;
+    margin: 10px 10px 10px 0;
+}
+
+.app-body-container > div:nth-child(3){
+    margin-left: 10px;
+    border: 1px solid #e7e7e7;
     border-radius: 5px;
 }
 
 #image-sec-div{
     width: 100%;
-    min-width: 800px;
+    min-width: 500px;
 }
 
 #sidebar-div{
     width: 500px;
     min-width: 500px;
+}
+
+.vl{
+    width: 0;
+    height: 730px;
+    border-left: 1px solid #e7e7e7;
+    margin: 10px 0;
 }
 
 /* @media screen and (max-width: 1000px) {

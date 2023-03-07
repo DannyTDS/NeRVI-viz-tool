@@ -1,22 +1,27 @@
 import React from "react";
-import Window from "./Window";
 
 import "./ImageSection.css";
 
 const ImageSection = (props) => {
     const ROOT = "/data";
 
-    const img_dir =
-        ROOT +
-        "/" + props.params.dset +
-        "/" + props.params.render +
-        "/" + props.params.time_step +
-        "-" + props.params.theta +
-        "-" + props.params.phi +
-        ".png";
+    const img_dirs = ["IR", "DVR"].map((mode) => (
+      ROOT +
+        "/" +
+        props.params.dset +
+        "/" +
+        mode +
+        "/" +
+        props.params.time_step +
+        "-" +
+        props.params.theta +
+        "-" +
+        props.params.phi +
+        ".png"
+    ));
 
     return (
-        <div className="windows-wrapper">
+        <div className="wrapper">
             {/* <div className="ratio-wrapper">
         <Window
           className="image-window"
@@ -26,8 +31,21 @@ const ImageSection = (props) => {
       <div className="ratio-wrapper">
         <Window className="image-window" />
       </div> */}
-            {/* <Window type="EXP" imagePath={exp_dir} /> */}
-            <Window imagePath={img_dir} />
+            <div className="window-wrapper">
+              <div className="window"><img
+                    className="image"
+                    src={process.env.PUBLIC_URL + img_dirs[0]}
+                    alt="not found"
+                /></div>
+                    
+            </div>
+            <div className="window-wrapper">
+              <div className="window"><img
+                    className="image"
+                    src={process.env.PUBLIC_URL + img_dirs[1]}
+                    alt="not found"
+                /></div>
+            </div>
         </div>
     );
 };
