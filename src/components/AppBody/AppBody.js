@@ -5,6 +5,8 @@ import SideBar from "./SideBar/SideBar";
 import "./AppBody.css";
 
 const AppBody = () => {
+    const DSETS = ["Vortex", "Ionization", "Tornado", "Five Jets", "Tangaroa"];
+
     const DSET_LIMITS = {
         theta: [0, 171, 9],
         phi: [0, 351, 9],
@@ -19,7 +21,6 @@ const AppBody = () => {
 
     const INIT_PARAMS = {
         dset: "Vortex",
-        render: "IR",
         time_step: "3",
         theta: "45",
         phi: "90",
@@ -28,13 +29,7 @@ const AppBody = () => {
     const [params, setParams] = useState(INIT_PARAMS);
 
     const paramsChangeHandler = (selectedParams) => {
-        const new_theta=(selectedParams.theta==="180") ? "0" : selectedParams.theta;
-        const new_phi=(selectedParams.phi==="360") ? "0" : selectedParams.phi;
-        setParams({
-            ...selectedParams,
-            theta: new_theta,
-            phi: new_phi
-        });
+        setParams(selectedParams);
     };
 
     return (
@@ -46,6 +41,7 @@ const AppBody = () => {
             <div id="sidebar-div">
                 <SideBar
                     limits={DSET_LIMITS}
+                    dsets={DSETS}
                     initialValues={INIT_PARAMS}
                     onParamsChange={paramsChangeHandler}
                 />

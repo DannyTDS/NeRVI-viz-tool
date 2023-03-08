@@ -3,7 +3,7 @@
 }
 
 .slider-title {
-    font-size: 20px;
+    font-size: 1.2em;
 }
 
 .slider-wrapper {
@@ -42,7 +42,7 @@
     /* -webkit-appearance: none; */
     height: 3px;
     width: 100%;
-    background: #ddd;
+    background: #e7e7e7;
     border-radius: 5px;
     outline: none;
     border: none;
@@ -58,7 +58,7 @@
     position: absolute;
     height: 45px;
     width: 45px;
-    color: #000;
+    color: #fff;
     top: -65px;
     transform: translateX(-50%) scale(0);
     transform-origin: bottom;
@@ -77,10 +77,9 @@
     height: 45px;
     width: 45px;
     left: 50%;
-    background: #FFF;
+    background: #404040;
     transform: translateX(-50%) rotate(45deg);
     z-index: -1;
-    border: 2px solid #DDD;
     border-top-left-radius: 50%;
     border-top-right-radius: 50%;
     border-bottom-left-radius: 50%;

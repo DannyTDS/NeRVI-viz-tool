@@ -8,6 +8,9 @@ const SideBar = (props) => {
 
     const [selectedParams, setParams] = useState(props.initialValues)
     const [timeStepLimits, setTimeStepLimits] = useState(props.limits.time_step[props.initialValues.dset])
+    
+    const animOptions = ["None", "Time Step", "Theta", "Phi"]
+    const [anim, setAnim] = useState(animOptions[0]);
 
     const formChangeHandler = (args) => {
         const {name, value} = args;
@@ -16,24 +19,31 @@ const SideBar = (props) => {
             ...prevParams,
             [name]: value
         }))
-        if (name==="dset") {
+        if (name==="Dataset") {
             setTimeStepLimits(props.limits.time_step[value]);
             resetViewing();
         }
     };
 
-    useEffect(() => {
-        // console.log(selectedParams)
-        // Pass selected params upwards
-        props.onParamsChange(selectedParams);
+    const animHandler = (args) => {
+        setAnim(args.value);
+    }
 
-        // Update radio buttons
-        if (selectedParams.render === "IR") {
-            document.getElementById("ir").checked=true;
-        } else {
-            document.getElementById("dvr").checked=true;
-        }
+    useEffect(() => {
+        // Pass selected params upwards
+        // console.log(selectedParams);
+        props.onParamsChange(selectedParams);
     }, [selectedParams]);
+
+    useEffect(() => {
+        if (anim === "None"){
+            document.getElementById("anim-btn").disabled = true;
+        } else {
+            const name = (anim === "Time Step") ? "time_step" : (anim === "Theta") ? "theta" : "phi";
+            const max = (name === "time_step") ? timeStepLimits[1] : (name === "theta") ? props.limits.theta[1] : props.limits.phi[1];
+            document.getElementById("anim-btn").disabled = (parseInt(selectedParams[name]) === max);
+        }
+    }, [selectedParams, anim])
 
     const resetViewing = () => {
         // Reset the viewing parameters
@@ -45,36 +55,93 @@ const SideBar = (props) => {
         }))
     };
 
+    const sleep = (ms) => {
+        return new Promise((resolve) => {setTimeout(resolve, ms)})
+    }
+
+    const playAnim = async () => {
+        const btn = document.getElementById("anim-btn");
+        btn.style.color = "#FFF"
+        btn.style.background = "#404040";
+
+        document.getElementById("reset-btn").disabled = true;
+        document.getElementById("spinner").style.opacity = "1";
+        
+        const name = (anim === "Time Step") ? "time_step" : (anim === "Theta") ? "theta" : "phi";
+        const max = (name === "time_step") ? timeStepLimits[1] : (name === "theta") ? props.limits.theta[1] : props.limits.phi[1];
+        const step = (name === "time_step") ? timeStepLimits[2] : (name === "theta") ? props.limits.theta[2] : props.limits.phi[2];
+        
+        for (let i=parseInt(selectedParams[name])+step; i<=max; i+=step){
+            await sleep(100);
+            formChangeHandler({"name":name, "value":i});
+        }
+        
+        btn.style.color = "#000"
+        btn.style.background = "#FFF";
+
+        document.getElementById("reset-btn").disabled = false;
+        document.getElementById("spinner").style.opacity = "0";
+    }
+
     return (
         <div className="sidebar-wrapper">
             <p id="menu-label">Control Panel</p>
             <div className="divider">
                 {/* <label id="dataset-label">Dataset</label> */}
                 <Dropdown
-                    selectedDataset={selectedParams.dset}
+                    title="Dataset"
+                    selected={selectedParams.dset}
+                    options={props.dsets}
                     onChangeHandler={(e) => {formChangeHandler(e)}}
                 />
-                <div className="btn-group">
+                <Dropdown 
+                    title="Animation"
+                    selected={anim}
+                    options={animOptions}
+                    onChangeHandler={(e) => {animHandler(e)}}
+                />
+                {/* <div className="btn-group">
                     <input
                         className="radio-input"
                         type="radio"
-                        name="render-opn-group"
-                        id="ir"
-                        value="ir"
-                        onClick={() => {formChangeHandler({name:"render", value:"IR"})}}
+                        name="anim-opn-group"
+                        id="none"
+                        value="none"
+                        disabled
                     />
-                    <label className="radio-label" htmlFor="ir">IR</label>
+                    <label className="radio-label" htmlFor="none">None</label>
                     <input
                         className="radio-input"
                         type="radio"
-                        name="render-opn-group"
-                        id="dvr"
-                        value="dvr"
-                        onClick={() => {formChangeHandler({name:"render", value:"DVR"})}}
+                        name="anim-opn-group"
+                        id="ts"
+                        value="ts"
                     />
-                    <label className="radio-label" htmlFor="dvr">DVR</label>
+                    <label className="radio-label" htmlFor="ts">Time Step</label>
+                    <input
+                        className="radio-input"
+                        type="radio"
+                        name="anim-opn-group"
+                        id="theta"
+                        value="theta"
+                    />
+                    <label className="radio-label" htmlFor="theta">Theta</label>
+                    <input
+                        className="radio-input"
+                        type="radio"
+                        name="anim-opn-group"
+                        id="phi"
+                        value="phi"
+                    />
+                    <label className="radio-label" htmlFor="phi">Phi</label>
+                </div> */}
+                <div style={{"position": "relative"}}>
+                    <button id="anim-btn" onClick={playAnim}>
+                        Play to End
+                    </button>
+                    <div id="spinner"></div>
                 </div>
-                <button className="reset-button" onClick={resetViewing}>
+                <button id="reset-btn" onClick={resetViewing}>
                     Reset
                 </button>
             </div>
