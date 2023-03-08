@@ -61,8 +61,9 @@ const SideBar = (props) => {
 
     const playAnim = async () => {
         const btn = document.getElementById("anim-btn");
-        btn.style.color = "#FFF"
-        btn.style.background = "#404040";
+        btn.classList.add("hold");
+        // btn.style.color = "#FFF"
+        // btn.style.background = "#404040";
 
         document.getElementById("reset-btn").disabled = true;
         document.getElementById("spinner").style.opacity = "1";
@@ -75,9 +76,11 @@ const SideBar = (props) => {
             await sleep(100);
             formChangeHandler({"name":name, "value":i});
         }
-        
-        btn.style.color = "#000"
-        btn.style.background = "#FFF";
+
+        // btn.style.color = "#000"
+        // btn.style.background = "#FFF";
+        // btn.disabled = true;
+        btn.classList.remove("hold");
 
         document.getElementById("reset-btn").disabled = false;
         document.getElementById("spinner").style.opacity = "0";

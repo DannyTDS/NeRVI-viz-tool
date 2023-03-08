@@ -25,9 +25,17 @@ button {
     height: 50px;
     font-size: 1em;
     outline: 1px solid #e7e7e7;
-    background-color: #FFF;
-    cursor: pointer;
     transition: all 0.3s;
+}
+
+button:enabled {
+    cursor: pointer;
+    background-color: #FFF;
+    color: #000;
+}
+
+button:disabled{
+    cursor: not-allowed;
 }
 
 button:hover:enabled {
@@ -41,11 +49,12 @@ button:active:enabled {
     color: #FFF;
 }
 
-button:disabled{
-    cursor: auto !important;
+.hold {
+    background-color: #404040 !important;
+    color: #FFF !important;
 }
 
-.btn-group{
+/* .btn-group{
     display: inline-flex;
     overflow: hidden;
     outline: 1px solid #e7e7e7;
@@ -55,9 +64,9 @@ button:disabled{
 
 .radio-input{
     display: none;
-}
+} */
 
-.radio-label{
+/* .radio-label{
     width: 50%;
     padding: 12px 0;
     text-align: center;
@@ -67,7 +76,7 @@ button:disabled{
     font-size: 1.2em;
     cursor: pointer;
     font-size: 1em;
-}
+} */
 
 /* .radio-label:not(:last-of-type){
     border-right:1px solid #e7e7e7;
