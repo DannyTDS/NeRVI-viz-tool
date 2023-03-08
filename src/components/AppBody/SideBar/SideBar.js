@@ -150,6 +150,7 @@ const SideBar = (props) => {
             </div>
             <div className="divider">
                 <FilterSlider
+                    id="1"
                     title="Time Step"
                     min={timeStepLimits[0]}
                     max={timeStepLimits[1]}
@@ -158,6 +159,7 @@ const SideBar = (props) => {
                     onChangeHandler={(e) => {formChangeHandler(e)}}
                 />
                 <FilterSlider
+                    id="2"
                     title="Theta"
                     min={props.limits.theta[0]}
                     max={props.limits.theta[1]}
@@ -166,6 +168,7 @@ const SideBar = (props) => {
                     onChangeHandler={(e) => {formChangeHandler(e)}}
                 />
                 <FilterSlider
+                    id="3"
                     title="Phi"
                     min={props.limits.phi[0]}
                     max={props.limits.phi[1]}

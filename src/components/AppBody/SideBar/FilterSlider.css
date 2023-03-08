@@ -26,6 +26,7 @@
 
 .left-value {
     position: absolute;
+    top: 4px;
     width: 50px;
     margin-right: 400px;
     text-align: right;
@@ -33,6 +34,7 @@
 
 .right-value {
     position: absolute;
+    top: 4px;
     width: 50px;
     margin-left: 400px;
     text-align: left;
@@ -48,8 +50,13 @@
     border: none;
 }
 
-.slider-tooltip {
+.range-wrapper {
     position: relative;
+    width: 100%;
+}
+
+.slider-tooltip {
+    position: absolute;
     text-align: center;
     place-items: center;
 }
