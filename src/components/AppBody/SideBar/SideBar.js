@@ -19,7 +19,8 @@ const SideBar = (props) => {
             ...prevParams,
             [name]: value
         }))
-        if (name==="Dataset") {
+        if (name==="dset") {
+            console.log(props.limits.time_step[value]);
             setTimeStepLimits(props.limits.time_step[value]);
             resetViewing();
         }

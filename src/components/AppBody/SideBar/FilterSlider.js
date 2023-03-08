@@ -12,7 +12,6 @@ const FilterSlider = (props) => {
         setTooltipValue(value);
         const offset = (value - props.min) / (props.max - props.min);
         document.getElementById("slider-tooltip"+props.id).style.left = offset*100 + "%";
-        console.log(offset*100);
         setIsMoving(true);
         // setTooltipOffset((toolTipValue - props.min)/(props.max - props.min)*100 + "%");
         props.onChangeHandler({name:name, value:value});
