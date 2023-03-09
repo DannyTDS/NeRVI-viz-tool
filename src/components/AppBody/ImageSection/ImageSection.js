@@ -46,10 +46,10 @@ const ImageSection = (props) => {
                     alt="not found"
                 /></div>
             </div>
-            <div id="labels-wrapper">
+            {/* <div id="labels-wrapper">
               <label>Time Step - Theta - Phi</label>
               <label>{props.params.time_step + " - " + props.params.theta + " - " + props.params.phi}</label>
-            </div>
+            </div> */}
         </div>
     );
 };

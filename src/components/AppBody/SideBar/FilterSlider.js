@@ -5,6 +5,7 @@ import "./FilterSlider.css";
 const FilterSlider = (props) => {
     const [toolTipValue, setTooltipValue] = useState(props.value);
     const [isMoving, setIsMoving] = useState(false);
+
     // const [toolTipOffset, setTooltipOffset] = useState("0%");
     const onChangeHandler = (e) => {
         const name = (props.title === "Time Step") ? "time_step" : (props.title === "Theta") ? "theta" : "phi"
@@ -28,7 +29,7 @@ const FilterSlider = (props) => {
     return (
         <div className="filter-container">
             <div>
-                <label className="slider-title">{props.title}</label>
+                <label className="slider-title">{props.title + " - " + toolTipValue}</label>
             </div>
             <div className="slider-wrapper">
                 <div className="range-container">

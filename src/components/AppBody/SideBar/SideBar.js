@@ -20,7 +20,6 @@ const SideBar = (props) => {
             [name]: value
         }))
         if (name==="dset") {
-            console.log(props.limits.time_step[value]);
             setTimeStepLimits(props.limits.time_step[value]);
             resetViewing();
         }
@@ -89,13 +88,38 @@ const SideBar = (props) => {
 
     return (
         <div className="sidebar-wrapper">
-            <p id="menu-label">Control Panel</p>
-            <div className="divider">
                 {/* <label id="dataset-label">Dataset</label> */}
                 <Dropdown
-                    title="Dataset"
+                    title="Data Set"
                     selected={selectedParams.dset}
                     options={props.dsets}
+                    onChangeHandler={(e) => {formChangeHandler(e)}}
+                />
+                <FilterSlider
+                    id="1"
+                    title="Time Step"
+                    min={timeStepLimits[0]}
+                    max={timeStepLimits[1]}
+                    step={timeStepLimits[2]}
+                    value={selectedParams.time_step}
+                    onChangeHandler={(e) => {formChangeHandler(e)}}
+                />
+                <FilterSlider
+                    id="2"
+                    title="Theta"
+                    min={props.limits.theta[0]}
+                    max={props.limits.theta[1]}
+                    step={props.limits.theta[2]}
+                    value={selectedParams.theta}
+                    onChangeHandler={(e) => {formChangeHandler(e)}}
+                />
+                <FilterSlider
+                    id="3"
+                    title="Phi"
+                    min={props.limits.phi[0]}
+                    max={props.limits.phi[1]}
+                    step={props.limits.phi[2]}
+                    value={selectedParams.phi}
                     onChangeHandler={(e) => {formChangeHandler(e)}}
                 />
                 <Dropdown 
@@ -141,7 +165,7 @@ const SideBar = (props) => {
                 </div> */}
                 <div style={{"position": "relative"}}>
                     <button id="anim-btn" onClick={playAnim}>
-                        Play to End
+                        Play
                     </button>
                     <div id="spinner"></div>
                 </div>
@@ -149,36 +173,6 @@ const SideBar = (props) => {
                     Reset
                 </button>
             </div>
-            <div className="divider">
-                <FilterSlider
-                    id="1"
-                    title="Time Step"
-                    min={timeStepLimits[0]}
-                    max={timeStepLimits[1]}
-                    step={timeStepLimits[2]}
-                    value={selectedParams.time_step}
-                    onChangeHandler={(e) => {formChangeHandler(e)}}
-                />
-                <FilterSlider
-                    id="2"
-                    title="Theta"
-                    min={props.limits.theta[0]}
-                    max={props.limits.theta[1]}
-                    step={props.limits.theta[2]}
-                    value={selectedParams.theta}
-                    onChangeHandler={(e) => {formChangeHandler(e)}}
-                />
-                <FilterSlider
-                    id="3"
-                    title="Phi"
-                    min={props.limits.phi[0]}
-                    max={props.limits.phi[1]}
-                    step={props.limits.phi[2]}
-                    value={selectedParams.phi}
-                    onChangeHandler={(e) => {formChangeHandler(e)}}
-                />
-            </div>
-        </div>
     );
 };
 

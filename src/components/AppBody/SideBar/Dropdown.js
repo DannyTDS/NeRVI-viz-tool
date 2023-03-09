@@ -10,7 +10,7 @@ const Dropdown = (props) => {
 
     const onItemClickHandler = (e) => {
         props.onChangeHandler({
-            name: (props.title === "Dataset") ? "dset": "anim",
+            name: (props.title === "Data Set") ? "dset": "anim",
             value: e.target.textContent
         });
         setIsActive(!isActive);

@@ -25,6 +25,8 @@ const Header = () => {
                     Project Led by Pengfei Gu
                     <br />
                     App Built by Ziang Tong
+                    <br />
+                    &copy; 2023. Made with React.js 18.1.0
                 </span>
                 <i
                     className="fa fa-info-circle fa-2x"

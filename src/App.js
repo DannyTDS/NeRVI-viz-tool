@@ -10,7 +10,7 @@ function App() {
         <div id="app">
             <Header />
             <AppBody />
-            <footer style={{"float": "right", "marginRight": "10px"}}> &copy; 2023. Made with React.js 18.1.0.</footer>
+            
         </div>
     );
 }
