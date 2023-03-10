@@ -1,16 +1,17 @@
-.wrapper {
+.image-section-wrapper {
     /* vertical-align: center;
     align-items: center; */
-    position: relative;
+    display: flex;
+    justify-content: space-between;
     height: 100%;
     /* align-items: center; */
 }
 
 .window-wrapper {
-    float: left;
+    /* display: flex; */
     height:0;
     width: 45%;
-    margin: 20px;
+    margin: 0 10px 0 20px;
     padding-bottom:45%;
 }
 
@@ -58,9 +59,15 @@ img {
 
 @media screen and (max-width: 1400px) {
     .window-wrapper{
-        float: none;
+        display: block;
         width: 90%;
-        margin: 20px;
+        margin: 0 auto 20px auto;
         padding-bottom: 90%;
+    }
+
+    .image-section-wrapper {
+        display: block;
+        height: 100%;
+        /* align-items: center; */
     }
 }

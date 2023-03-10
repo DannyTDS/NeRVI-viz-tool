@@ -1,6 +1,7 @@
 .app-body-container {
     display: flex;
-    height: 750px;
+    height: 600px;
+    margin-top: 50px;
     /* border-top: 2px solid #bebebe;
     border-bottom: 2px solid #bebebe; */
 }
@@ -17,7 +18,6 @@
 .app-body-container > div:nth-child(3){
     margin-left: 10px;
     border: 1px solid #e7e7e7;
-    border-radius: 5px;
 }
 
 #image-sec-div{
@@ -26,19 +26,19 @@
 }
 
 #sidebar-div{
-    width: 500px;
-    min-width: 500px;
+    width: 450px;
+    min-width: 450px;
+    margin-right: 20px;
 }
 
 .vl{
     width: 0;
-    height: 730px;
+    height: 580px;
     border-left: 1px solid #e7e7e7;
-    margin: 10px 0;
+    margin: 10px auto;
 }
 
 /* @media screen and (max-width: 1000px) {
-
     .app-body-container {
         height: 1300px;
     }

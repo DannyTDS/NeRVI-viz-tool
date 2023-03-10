@@ -17,7 +17,7 @@ const Dropdown = (props) => {
     };
 
     return (
-        <div className="wrapper">
+        <div className="dropdown-wrapper">
             <div><label className="dropdown-title">{props.title}</label></div>
             <div className="dropdown">
                 <div className="dropdown-btn" onClick={onBtnClickHandler}>
