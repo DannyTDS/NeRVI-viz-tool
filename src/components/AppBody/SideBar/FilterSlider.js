@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import "./FilterSlider.css";
 
@@ -28,8 +28,9 @@ const FilterSlider = (props) => {
 
     return (
         <div className="filter-container">
-            <div>
-                <label className="slider-title">{props.title + " - " + toolTipValue}</label>
+            <div style={{"height": "20px", "marginBottom":"15px"}}>
+                <label id="slider-title">{props.title}</label>
+                <label id="slider-value">{props.value}</label>
             </div>
             <div className="slider-wrapper">
                 <div className="range-container">
