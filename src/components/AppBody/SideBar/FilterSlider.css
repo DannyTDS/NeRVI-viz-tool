@@ -2,18 +2,14 @@
     margin: 30px 0;
 }
 
-#slider-title {
-    float: left;
-    font-size: 1.2em;
+#title-wrapper {
+    position: relative;
+    height: 20px;
+    margin-bottom: 15px;
 }
 
-#slider-value {
-    float: right;
-    font-size: 1em;
-    text-align: center;
-    color: #000;
-    width: 30px;
-    background-color: #e7e7e7;
+#slider-title {
+    font-size: 1.2em;
 }
 
 .slider-wrapper {

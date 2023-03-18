@@ -28,9 +28,8 @@ const FilterSlider = (props) => {
 
     return (
         <div className="filter-container">
-            <div style={{"height": "20px", "marginBottom":"15px"}}>
-                <label id="slider-title">{props.title}</label>
-                <label id="slider-value">{props.value}</label>
+            <div id="title-wrapper">
+                <label id="slider-title">{props.title + " - " + props.value}</label>
             </div>
             <div className="slider-wrapper">
                 <div className="range-container">
