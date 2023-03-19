@@ -10,7 +10,7 @@ Put images under `public/data/$d/$m/`.
 
 Each render type of each data set shall occupy a directory. For example, the IR images for Vortex data set would be put in `public/data/Vortex/IR/`, and the DVR images would be put in `public/data/Vortex/DVR`.
 
-Naming wise, each image should be named as `$ts-$t-$p.png`, where `$ts` is the time step, `$t` is the theta angle, `$p` is the phi angle. For example, the vortex image corresponding to time step 3, theta 90, phi 90 shall be named `public/data/Vortex/3-90-90.png`.
+Naming wise, each image should be named as `$ts-$t-$p.png`, where `$ts` is the time step, `$t` is the theta angle, `$p` is the phi angle. For example, the IR vortex image corresponding to time step 3, theta 90, phi 90 shall be named `public/data/Vortex/IR/3-90-90.png`.
 
 ## How to run
 1. Clone the repository to your local machine.
