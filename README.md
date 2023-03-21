@@ -16,4 +16,4 @@ Naming wise, each image should be named as `$ts-$t-$p.png`, where `$ts` is the t
 1. Clone the repository to your local machine.
 2. Navigate to the repository's root directory.
 3. Run `npm start` from the terminal.
-4. This shall run the app on `localhost:8000`.
+4. This shall run the app on `localhost:3000`.
