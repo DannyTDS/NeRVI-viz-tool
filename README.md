@@ -1,8 +1,19 @@
-# Visualization-App
-This app is designed for comparative image visualization for the Vortex dataset.
+## NeRVI-viz-tool
+This app is designed for comparative image visualization for the NeRVI project. Built with React.js 18.1.0.
 
-## Current Layout
-<img width="1781" alt="Screen Shot 2022-08-16 at 15 29 24" src="https://user-images.githubusercontent.com/97473223/184965805-a2f91c90-e6f1-4fb1-b0fb-b791074e73ca.png">
+## Data set preparation
+Put images under `public/data/$d/$m/`.
+- `$d` is in (`Vortex`, `Five Jets`, `Ionization`, `Tangaroa`, `Tornado`).
+- `$m` is in (`IR`, `DVR`).
 
-## TODO
-Add support for switching between datasets (pending dataset output).
+<!-- eol -->
+
+Each render type of each data set shall occupy a directory. For example, the IR images for Vortex data set would be put in `public/data/Vortex/IR/`, and the DVR images would be put in `public/data/Vortex/DVR`.
+
+Naming wise, each image should be named as `$ts-$t-$p.png`, where `$ts` is the time step, `$t` is the theta angle, `$p` is the phi angle. For example, the IR vortex image corresponding to time step 3, theta 90, phi 90 shall be named `public/data/Vortex/IR/3-90-90.png`.
+
+## How to run
+1. Clone the repository to your local machine.
+2. Navigate to the repository's root directory.
+3. Run `npm start` from the terminal.
+4. This shall run the app on `localhost:8000`.
