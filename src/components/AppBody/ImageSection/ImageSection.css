@@ -10,9 +10,9 @@
 .window-wrapper {
     /* display: flex; */
     height:0;
-    width: 50%;
+    width: 100%;
     margin: 0 10px 0 20px;
-    padding-bottom: 50%;
+    /* padding-bottom: 100%; */
 }
 
 .window {
@@ -57,7 +57,7 @@ img {
     padding: 5px 0;
 }
 
-@media screen and (max-width: 1400px) {
+/* @media screen and (max-width: 1400px) {
     .window-wrapper{
         display: block;
         width: 90%;
@@ -68,6 +68,6 @@ img {
     .image-section-wrapper {
         display: block;
         height: 100%;
-        /* align-items: center; */
+        /* align-items: center;
     }
-}
+} */

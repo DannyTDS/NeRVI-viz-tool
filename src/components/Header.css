@@ -1,21 +1,45 @@
 .header-frame {
+    position: relative;
     height: 80px;
     padding: 5px 20px 5px 20px;
     vertical-align: center;
-    display: flex;
     justify-content: space-between;
     border-bottom: 1px solid #e7e7e7;
+    display: flex;
 }
 
-.flex-wrapper{
+.flex {
     display: flex;
 }
 
 p {
+    float: left;
     margin: 20px 0;
-    font-size: 2em;
-    overflow: hidden;
+    font-size: 1.8em;
+    overflow: visible;
     resize: none;
+}
+
+.header-frame span {
+    position: absolute;
+    right: 50px;
+    margin-top: 10px;
+    margin-right: 10px;
+    padding: 5px;
+    border-radius: 10px;
+    height: 60px;
+    width: 220px;
+    background: #fff;
+    box-shadow: 0 0 10px 6px rgba(0,0,0,0.1);
+    font-size: 0.8em;
+    text-align: right;
+    color: #404040;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.header-frame span.show {
+    opacity: 1;
 }
 
 #info-icon {
@@ -29,25 +53,4 @@ p {
 #info-icon:hover {
     color: #000044;
     transition: all 0.3s;
-}
-
-.header-frame span {
-    float: right;
-    margin-top: 10px;
-    margin-right: 10px;
-    padding: 5px;
-    border-radius: 10px;
-    height: 60px;
-    width: 280px;
-    background: #fff;
-    box-shadow: 0 0 10px 6px rgba(0,0,0,0.1);
-    font-size: 0.8em;
-    text-align: right;
-    color: #404040;
-    opacity: 0;
-    transition: all 0.3s;
-}
-
-.header-frame span.show {
-    opacity: 1;
 }

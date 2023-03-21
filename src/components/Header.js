@@ -15,10 +15,14 @@ const Header = () => {
 
     return (
         <div className="header-frame">
-            <div className="flex-wrapper">
-                <p>NeRVI: Compressive Neural Representation of Visualization Images</p>
-            </div>
-            <div className="flex-wrapper">
+                <div className="flex"><p>NeRVI: Compressive Neural Representation of Visualization Images</p></div>
+                <div className="flex">
+                <i
+                    className="fa fa-info-circle fa-2x"
+                    id="info-icon"
+                    onClick={onClickHandler}
+                    onBlur={onBlurHandler}
+                ></i>
                 <span className={isOpen ? "show" : ""}>
                     Supervised by Professor Chaoli Wang
                     <br />
@@ -28,12 +32,6 @@ const Header = () => {
                     <br />
                     &copy; 2023. Made with React.js 18.1.0
                 </span>
-                <i
-                    className="fa fa-info-circle fa-2x"
-                    id="info-icon"
-                    onClick={onClickHandler}
-                    onBlur={onBlurHandler}
-                ></i>
             </div>
         </div>
     );

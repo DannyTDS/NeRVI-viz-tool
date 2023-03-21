@@ -2,6 +2,9 @@
   font-family:"Helvetica Neue",'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-.app {
+#app {
   background-color: #fff;
+  height: 100vh;
+  width: 70vw;
+  margin: 0 15vw;
 }
