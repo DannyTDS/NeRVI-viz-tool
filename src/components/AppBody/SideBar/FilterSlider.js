@@ -29,7 +29,7 @@ const FilterSlider = (props) => {
     return (
         <div className="filter-container">
             <div id="title-wrapper">
-                <label id="slider-title">{props.title + " - " + props.value}</label>
+                <label id="slider-title">{props.title + ": " + props.value}</label>
             </div>
             <div className="slider-wrapper">
                 <div className="range-container">

@@ -35,7 +35,7 @@ const ImageSection = (props) => {
                     <img
                         className="image"
                         src={process.env.PUBLIC_URL + img_dir}
-                        alt="image not found"
+                        alt="not found"
                     />
                 </div>
             </div>
