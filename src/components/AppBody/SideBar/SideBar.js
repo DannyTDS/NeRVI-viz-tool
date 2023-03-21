@@ -95,6 +95,26 @@ const SideBar = (props) => {
                     options={props.dsets}
                     onChangeHandler={(e) => {formChangeHandler(e)}}
                 />
+                <div style={{"margin" : "20px auto 0 auto"}}><label style={{"fontSize" : "1.2em"}}>Render Mode</label>
+                <div className="btn-group">
+                    <input
+                        className="radio-input"
+                        type="radio"
+                        name="anim-opn-group"
+                        id="ir"
+                        value="ir"
+                    />
+                    <label className="radio-label" htmlFor="ir">IR</label>
+                    <input
+                        className="radio-input"
+                        type="radio"
+                        name="anim-opn-group"
+                        id="dvr"
+                        value="dvr"
+                    />
+                    <label className="radio-label" htmlFor="dvr">DVR</label>
+                </div>
+                </div>
                 <FilterSlider
                     id="1"
                     title="Time Step"
@@ -128,41 +148,6 @@ const SideBar = (props) => {
                     options={animOptions}
                     onChangeHandler={(e) => {animHandler(e)}}
                 />
-                {/* <div className="btn-group">
-                    <input
-                        className="radio-input"
-                        type="radio"
-                        name="anim-opn-group"
-                        id="none"
-                        value="none"
-                        disabled
-                    />
-                    <label className="radio-label" htmlFor="none">None</label>
-                    <input
-                        className="radio-input"
-                        type="radio"
-                        name="anim-opn-group"
-                        id="ts"
-                        value="ts"
-                    />
-                    <label className="radio-label" htmlFor="ts">Time Step</label>
-                    <input
-                        className="radio-input"
-                        type="radio"
-                        name="anim-opn-group"
-                        id="theta"
-                        value="theta"
-                    />
-                    <label className="radio-label" htmlFor="theta">Theta</label>
-                    <input
-                        className="radio-input"
-                        type="radio"
-                        name="anim-opn-group"
-                        id="phi"
-                        value="phi"
-                    />
-                    <label className="radio-label" htmlFor="phi">Phi</label>
-                </div> */}
                 <div style={{"position": "relative"}}>
                     <button id="anim-btn" onClick={playAnim}>
                         Play

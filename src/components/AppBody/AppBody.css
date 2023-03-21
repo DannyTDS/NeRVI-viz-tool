@@ -1,6 +1,6 @@
 .app-body-container {
     display: flex;
-    height: 640px;
+    height: 700px;
     margin-top: 20px;
     /* border-top: 2px solid #bebebe;
     border-bottom: 2px solid #bebebe; */
@@ -33,7 +33,7 @@
 
 .vl{
     width: 0;
-    height: 620px;
+    height: 680px;
     border-left: 1px solid #e7e7e7;
     margin: 10px auto;
 }
