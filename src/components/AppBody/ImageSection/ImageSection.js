@@ -5,21 +5,19 @@ import "./ImageSection.css";
 const ImageSection = (props) => {
     const ROOT = "/data";
 
-    const img_dirs = ["IR", "DVR"].map(
-        (mode) =>
+    const img_dir = 
             ROOT +
             "/" +
             props.params.dset +
             "/" +
-            mode +
+            props.params.mode +
             "/" +
             props.params.time_step +
             "-" +
             props.params.theta +
             "-" +
             props.params.phi +
-            ".png"
-    );
+            ".png";
 
     return (
         <div className="image-section-wrapper">
@@ -36,8 +34,8 @@ const ImageSection = (props) => {
                 <div className="window">
                     <img
                         className="image"
-                        src={process.env.PUBLIC_URL + img_dirs[0]}
-                        alt="not found"
+                        src={process.env.PUBLIC_URL + img_dir}
+                        alt="image not found"
                     />
                 </div>
             </div>

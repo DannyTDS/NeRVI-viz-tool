@@ -8,8 +8,8 @@ const SideBar = (props) => {
 
     const [selectedParams, setParams] = useState(props.initialValues)
     const [timeStepLimits, setTimeStepLimits] = useState(props.limits.time_step[props.initialValues.dset])
-    
-    const animOptions = ["None", "Time Step", "Theta", "Phi"]
+
+    const animOptions = ["None", "Time Step", "Theta", "Phi"];
     const [anim, setAnim] = useState(animOptions[0]);
 
     const formChangeHandler = (args) => {
@@ -101,18 +101,22 @@ const SideBar = (props) => {
                         className="radio-input"
                         type="radio"
                         name="anim-opn-group"
-                        id="ir"
-                        value="ir"
+                        id="IR"
+                        value="IR"
+                        checked={selectedParams.mode === "IR"}
+                        onChange={() => formChangeHandler({name: "mode", value: "IR"})}
                     />
-                    <label className="radio-label" htmlFor="ir">IR</label>
+                    <label className="radio-label" htmlFor="IR">IR</label>
                     <input
                         className="radio-input"
                         type="radio"
                         name="anim-opn-group"
-                        id="dvr"
-                        value="dvr"
+                        id="DVR"
+                        value="DVR"
+                        checked={selectedParams.mode === "DVR"}
+                        onChange={() => formChangeHandler({name: "mode", value: "DVR"})}
                     />
-                    <label className="radio-label" htmlFor="dvr">DVR</label>
+                    <label className="radio-label" htmlFor="DVR">DVR</label>
                 </div>
                 </div>
                 <FilterSlider

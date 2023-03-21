@@ -21,6 +21,7 @@ const AppBody = () => {
 
     const INIT_PARAMS = {
         dset: "Vortex",
+        mode: "DVR",
         time_step: "3",
         theta: "45",
         phi: "90",
